@@ -38,7 +38,7 @@ class PDFWriter extends Writer{
     }
 }
 
-class WriterFactory{
+class WriterFactory {
     public static function make(string $type): Writer
     {
         switch ($type) {

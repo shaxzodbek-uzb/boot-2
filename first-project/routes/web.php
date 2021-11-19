@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/new', function () {
-    return view('bye');
-});
+Route::get('/{name?}', [PageController::class, 'welcome'])->name('first-route');
+Route::resource('users', UserController::class);
