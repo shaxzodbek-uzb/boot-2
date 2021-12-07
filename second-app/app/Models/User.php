@@ -47,8 +47,16 @@ class User extends Authenticatable
         // has - fk bog'lanadigan model bo'ladi
         return $this->hasOne(Phone::class);
     }
-    public function comments()
+    public function author_comments()
     {
         return $this->hasMany(Comment::class);
+    }
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
     }
 }
