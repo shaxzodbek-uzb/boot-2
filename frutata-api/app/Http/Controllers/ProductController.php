@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -28,7 +29,7 @@ class ProductController extends Controller
             'description' => 'required|string|max:500',
         ]);
         $file_name = Str::slug($params['name'] . now());
-        $path = $request->file('image')->storeAs('images', $file_name . '.jpg');
+        $path = $request->file('image')->storeAs('images', $file_name . '.jpg', 'public');
         $params['image'] = $path;
         $product = Product::create($params);
         return response()->json([
@@ -44,7 +45,7 @@ class ProductController extends Controller
         ]);
         $file_name = Str::slug($params['name'] . now());
         if ($request->hasFile('image')) {
-            $path = $request->file('image')->storeAs('images', $file_name . '.jpg');
+            $path = $request->file('image')->storeAs('images', $file_name . '.jpg', 'public');
             $params['image'] = $path;
         }
         $product->update($params);
@@ -54,6 +55,8 @@ class ProductController extends Controller
     }
     public function show(Product $product)
     {
+        // return Storage::disk('public')->download($product->image);
+        // return Storage::disk('public')->response($product->image);
         return response()->json([
             'item' => $product
         ]);
