@@ -1,35 +1,39 @@
 <?php
-
-abstract class Birlik{
+// comments
+abstract class Birlik
+{
     public $strength;
-    
+
     abstract public function addAskar(Birlik $askar);
-    abstract public function getStrength():int;
+    abstract public function getStrength(): int;
 };
-class Oqchi extends Birlik{
+class Oqchi extends Birlik
+{
     public $strength = 2;
     public function addAskar(Birlik $askar)
     {
         throw new \Exception('QO\'shish mumkin emas!');
     }
-    public function getStrength():int
+    public function getStrength(): int
     {
         return $this->strength;
     }
 }
 
-class Desant extends Birlik{
+class Desant extends Birlik
+{
     public $strength = 3;
     public function addAskar(Birlik $askar)
     {
         throw new \Exception('QO\'shish mumkin emas!');
     }
-    public function getStrength():int
+    public function getStrength(): int
     {
         return $this->strength;
     }
 }
-class BTR extends Birlik {
+class BTR extends Birlik
+{
     public $askarlar = [];
     public function addAskar(Birlik $askar)
     {
@@ -45,7 +49,8 @@ class BTR extends Birlik {
         return $result;
     }
 }
-class Armiya extends Birlik {
+class Armiya extends Birlik
+{
     public $askarlar = [];
     public function addAskar(Birlik $askar)
     {
