@@ -1,6 +1,5 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Frutata from "../views/Frutata.vue";
 
 Vue.use(VueRouter);
 
@@ -15,10 +14,15 @@ const routes = [
   //     import(/* webpackChunkName: "about" */ "../views/About.vue"),
   // },
   {
-    path: '/',
-    name: "Frutata",
-    component: Frutata
-  }
+    path: "/",
+    name: "MainPage",
+    component: () => import("../views/Index"),
+  },
+  {
+    path: "/support",
+    name: "SupportPage",
+    component: () => import("../views/Support"),
+  },
 ];
 
 const router = new VueRouter({
