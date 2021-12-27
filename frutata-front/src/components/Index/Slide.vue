@@ -11,88 +11,56 @@
           >Все продукции</a
         >
       </div>
-      <div class="image-slider swiper-container" style="padding: 10px 10px">
-        <div class="image-slider__wrapper swiper-wrapper">
-          <div class="image-slider__slide swiper-slide">
-            <div id="bp" class="image-slider__image card">
-              <div class="kimlip">
-                <img class="card__img" src="@/assets/img/2.png" alt="" />
-              </div>
-              <div class="card__cont">
-                <div class="card__title">В пакетная упаковка</div>
-                <div class="card__txt">Грушевые чипсы</div>
-                <div class="card__more">Подробнее</div>
-              </div>
-            </div>
-          </div>
-          <div class="image-slider__slide swiper-slide">
-            <div id="bp" class="image-slider__image card">
-              <div class="kimlip">
-                <img class="card__img" src="@/assets/img/3.png" alt="" />
-              </div>
-              <div class="card__cont">
-                <div class="card__title">В пакетная упаковка</div>
-                <div class="card__txt">Микс «Персик, груша, инжир»</div>
-                <div class="card__more">Подробнее</div>
-              </div>
-            </div>
-          </div>
-          <div class="image-slider__slide swiper-slide">
-            <div id="bp" class="image-slider__image card">
-              <div class="kimlip">
-                <img class="card__img" src="@/assets/img/4.png" alt="" />
-              </div>
-              <div class="card__cont">
-                <div class="card__title">В пакетная упаковка</div>
-                <div class="card__txt">
-                  Фруктовый микс «Слива, яблоко, абрикос»
-                </div>
-                <div class="card__more">Подробнее</div>
-              </div>
-            </div>
-          </div>
-          <div class="image-slider__slide swiper-slide">
-            <div id="bp" class="image-slider__image card">
-              <div class="kimlip">
-                <img class="card__img" src="@/assets/img/2.png" alt="" />
-              </div>
-              <div class="card__cont">
-                <div class="card__title">В пакетная упаковка</div>
-                <div class="card__txt">Грушевые чипсы</div>
-                <div class="card__more">Подробнее</div>
-              </div>
-            </div>
-          </div>
-          <div class="image-slider__slide swiper-slide">
-            <div id="bp" class="image-slider__image card">
-              <div class="kimlip">
-                <img class="card__img" src="@/assets/img/3.png" alt="" />
-              </div>
-              <div class="card__cont">
-                <div class="card__title">В пакетная упаковка</div>
-                <div class="card__txt">Микс «Персик, груша, инжир»</div>
-                <div class="card__more">Подробнее</div>
-              </div>
-            </div>
-          </div>
-          <div class="image-slider__slide swiper-slide">
-            <div id="bp" class="image-slider__image card">
-              <div class="kimlip">
-                <img class="card__img" src="@/assets/img/4.png" alt="" />
-              </div>
-              <div class="card__cont">
-                <div class="card__title">В пакетная упаковка</div>
-                <div class="card__txt">
-                  Фруктовый микс «Слива, яблоко, абрикос»
-                </div>
-                <div class="card__more">Подробнее</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div> -->
+      <div style="padding: 10px 10px">
+        <VueSlickCarousel :options="slickOptions">
+          <ProductListItem
+            v-for="(item, idx) in items"
+            :key="idx"
+            :item="item"
+          />
+        </VueSlickCarousel>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+import VueSlickCarousel from "slick-vuejs";
+// optional style for arrows & dots
+import "slick-vuejs/dist/slick-vuejs-theme.css";
+import "slick-vuejs/dist/slick-vuejs.css";
+
+export default {
+  components: { VueSlickCarousel },
+  data() {
+    return {
+      slickOptions: {
+        slidesToShow: 3,
+        // Any other options that can be got from plugin documentation
+      },
+      items: [
+        {
+          img: require("@/assets/img/2.png"),
+          title: "В пакетная упаковка1",
+          text: "Фруктовый микс «Слива, яблоко, абрикос»",
+        },
+        {
+          img: require("@/assets/img/3.png"),
+          title: "В пакетная упаковка2",
+          text: "Фруктовый микс «Слива, яблоко, абрикос»",
+        },
+        {
+          img: require("@/assets/img/2.png"),
+          title: "В пакетная упаковка3",
+          text: "Грушевые чипсы",
+        },
+        {
+          img: require("@/assets/img/4.png"),
+          title: "В пакетная упаковка",
+          text: "Фруктовый микс «Слива, яблоко, абрикос»",
+        },
+      ],
+    };
+  },
+};
+</script>

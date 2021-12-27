@@ -14,38 +14,22 @@ Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 
 const requireComponent = require.context(
-  // The relative path of the components folder
   "./components",
-  // Whether or not to look in subfolders
   true,
-  // The regular expression used to match base component filenames
   /[A-Z]\w+\.(vue|js)$/
 );
-console.log(requireComponent.keys());
 requireComponent.keys().forEach((fileName) => {
-  // Get component config
   const componentConfig = requireComponent(fileName);
+  let path_list = fileName.split("/");
+  let componentName = path_list.pop();
+  path_list.shift();
 
-  // Get PascalCase name of component
-  const componentName = upperFirst(
-    camelCase(
-      // Gets the file name regardless of folder depth
-      fileName
-        .split("/")
-        .pop()
-        .replace(/\.\w+$/, "")
-    )
+  componentName = upperFirst(
+    camelCase(path_list.join("") + componentName.replace(/\.\w+$/, ""))
   );
-  console.log(componentName);
-  // Register component globally
-  Vue.component(
-    componentName,
-    // Look for the component options on `.default`, which will
-    // exist if the component was exported with `export default`,
-    // otherwise fall back to module's root.
-    componentConfig.default || componentConfig
-  );
+  Vue.component(componentName, componentConfig.default || componentConfig);
 });
+
 new Vue({
   router,
   store,
