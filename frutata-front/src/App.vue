@@ -17,17 +17,17 @@ export default {
     };
   },
   components: { Footer, Navbar },
-  beforeCreate() {
-    console.log("before create");
-  },
-  created() {
-    console.log("created");
-  },
-  beforeUpdate() {
-    console.log("before update");
-  },
-  updated() {
-    console.log("updated");
-  },
+  // beforeCreate() {
+  //   console.log("before create");
+  // },
+  // created() {
+  //   console.log("created");
+  // },
+  // beforeUpdate() {
+  //   console.log("before update");
+  // },
+  // updated() {
+  //   console.log("updated");
+  // },
 };
 </script>

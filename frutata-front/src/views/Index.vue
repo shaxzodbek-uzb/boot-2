@@ -1,10 +1,9 @@
 <template>
   <div>
-    <button @click="showItems(4)">4</button>
-    <button @click="showItems(3)">3</button>
-    <button @click="showItems(5)">5</button>
-    <div>
-      <div v-for="(item, idx) in items" :key="idx">{{ item }}</div>
+    <div v-if="loading">Loading ...</div>
+    <div v-else v-for="item in items" :key="item.id">
+      {{ item.name }}:
+      {{ item.price | numberFormat(item.id & 1 ? "de-DE" : "ru-RU") }}
     </div>
     <!-- intro -->
     <IndexIntro />
@@ -15,32 +14,34 @@
     <IndexTalk />
 
     <IndexPack />
-
-    <IndexPartners />
+    <!-- <IndexPartners /> -->
 
     <IndexContacts />
   </div>
 </template>
 <script>
+const serverData = [
+  { id: 1, name: "Iphone", price: 20082736 },
+  { id: 2, name: "Iphone 2", price: 30082736 },
+  { id: 3, name: "Iphone 3", price: 40082736 },
+  { id: 4, name: "Iphone 4", price: 50082736 },
+  { id: 5, name: "Iphone 5", price: 60082736 },
+  { id: 6, name: "Iphone 6", price: 70082736 },
+];
+//
 export default {
   data() {
     return {
-      countItems: 6,
+      items: [],
+      loading: true,
     };
   },
-  computed: {
-    items() {
-      let arr = [];
-      for (let index = 1; index <= this.countItems; index++) {
-        arr.push(index);
-      }
-      return arr;
-    },
-  },
-  methods: {
-    showItems(count) {
-      this.countItems = count;
-    },
+  mounted() {
+    setTimeout(() => {
+      this.items = serverData;
+
+      this.loading = false;
+    }, 2000);
   },
 };
 </script>

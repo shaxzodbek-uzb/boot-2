@@ -66,9 +66,11 @@
     </div>
   </div>
 </template>
-
 <script>
-export default {};
+// import loadData from "@/mixins/loadData";
+export default {
+  // mixins: [loadData],
+};
 </script>
 
 <style></style>

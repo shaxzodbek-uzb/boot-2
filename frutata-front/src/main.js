@@ -6,6 +6,7 @@ import upperFirst from "lodash/upperFirst";
 import Vue from "vue";
 import App from "./App.vue";
 import "./assets/main.css";
+import "./plugin/filters";
 import router from "./router";
 import store from "./store";
 Vue.config.productionTip = false;
@@ -29,7 +30,6 @@ requireComponent.keys().forEach((fileName) => {
   );
   Vue.component(componentName, componentConfig.default || componentConfig);
 });
-
 new Vue({
   router,
   store,

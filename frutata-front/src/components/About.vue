@@ -24,9 +24,16 @@
     </div>
   </div>
 </template>
-
 <script>
-export default {};
+import loadData from "@/mixins/loadData";
+export default {
+  mixins: [loadData],
+  methods: {
+    async loadData() {
+      console.log("loading data for about in component");
+    },
+  },
+};
 </script>
 
 <style></style>
