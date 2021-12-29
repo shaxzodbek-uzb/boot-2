@@ -1,0 +1,668 @@
+@media (max-width: 1200px) {
+  .container {
+    max-width: 970px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 870px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    max-width: none !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .nav-link {
+    padding: 5px !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .pad {
+    padding: 10px 10px;
+  }
+
+  .pad__txt {
+    line-height: 16px;
+  }
+
+  .kim {
+    width: 200px;
+    left: 0;
+  }
+
+  .tab__txt {
+    font-size: 14px;
+    line-height: 18px;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .stat__bignum {
+    font-size: 90px;
+  }
+
+  .nav-link {
+    padding: 0px 7px !important;
+    font-size: 14px;
+  }
+
+  #ai {
+    padding-top: 80px;
+  }
+
+  .intro__title {
+    line-height: 50px;
+  }
+
+  .intro__subtitle {
+    font-size: 14px;
+  }
+
+  .pad {
+    padding: 10px 15px;
+  }
+
+  .pad__txt {
+    margin-left: 20px;
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  .talk__txt {
+    font-size: 14px;
+    line-height: 18px;
+    max-width: 500px;
+  }
+
+  .about__txt {
+    font-size: 14px;
+  }
+
+  .tab {
+    padding: 30px 15px;
+  }
+
+  .tab__txt {
+    font-size: 16px;
+    line-height: 16px;
+    max-width: 250px;
+  }
+
+  .kim {
+    width: 200px;
+    left: 0;
+  }
+
+  .partners__txt {
+    font-size: 14px;
+    max-width: 500px;
+  }
+
+  #cherry {
+    padding: 0px 6px;
+  }
+
+  .nam {
+    margin-bottom: 10px;
+  }
+
+  .footer {
+    padding: 30px 10px;
+  }
+
+  .foot__txt {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 992px) {
+  #lana {
+    width: 250px !important;
+  }
+
+  .cry {
+    width: 200px;
+  }
+
+  .pad {
+    padding: 5px;
+  }
+
+  .talk__content {
+    margin-bottom: 30px;
+  }
+
+  #lana {
+    width: 300px;
+  }
+
+  #del {
+    padding: 0px;
+  }
+
+  .talk__txt {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .pad__txt {
+    line-height: 16px;
+  }
+
+  .jimbe {
+    width: 350px;
+  }
+
+  .foot__txt {
+    font-size: 13px;
+  }
+
+  #loona {
+    justify-content: space-evenly;
+  }
+
+  .partners__txt {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .card__cont {
+    justify-content: space-evenly;
+  }
+
+  .tab__txt {
+    font-size: 13px;
+    line-height: 14px;
+    max-width: 220px;
+  }
+
+  #ai {
+    padding-top: 50px;
+  }
+
+  #navbarNavDropdown {
+    margin-top: 30px;
+  }
+
+  .about {
+    padding-bottom: 30px;
+  }
+
+  .slide__content {
+    margin-bottom: 20px;
+  }
+
+  .slide {
+    padding-bottom: 30px;
+  }
+
+  .talk {
+    padding-bottom: 50px;
+  }
+
+  .pack {
+    padding-bottom: 50px;
+  }
+
+  .partners {
+    padding-bottom: 30px;
+  }
+
+  .contacts {
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  #loona {
+    margin-bottom: 12px;
+    align-items: center;
+  }
+
+  #agustd {
+    text-align: center;
+  }
+
+  .foot__txt {
+    margin-bottom: 6px;
+  }
+
+  #piri {
+    text-align: center;
+  }
+
+  #forewer {
+    margin-bottom: 12px;
+  }
+
+  #pikaboo {
+    margin-bottom: 20px;
+  }
+
+  #easter {
+    margin-bottom: 30px;
+  }
+
+  .socs {
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+
+  .pad__img {
+    text-align: center;
+  }
+
+  #lana {
+    padding: 20px 0px;
+  }
+
+  .stat__bignub {
+    font-size: 60px;
+    line-height: 70px;
+  }
+
+  .ellipse {
+    width: 130px;
+    height: 130px;
+  }
+
+  .ellipse2 {
+    width: 130px;
+    height: 130px;
+  }
+
+  .kim {
+    width: 150px;
+    bottom: 20px;
+  }
+
+  .jimbe {
+    width: 300px;
+  }
+
+  .intro__title {
+    font-size: 45px;
+    line-height: 40px;
+    margin-bottom: 20px;
+  }
+
+  .intro__subtitle {
+    margin-bottom: 20px;
+  }
+
+  .stat__bignum {
+    font-size: 70px;
+    line-height: 80px;
+  }
+
+  .ellipse {
+    top: -10px;
+  }
+
+  .ellipse2 {
+    top: -10px;
+  }
+
+  .about__title {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .about__title {
+    line-height: 40px;
+  }
+
+  .about__txt {
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  .slide__title {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .slide__more {
+    font-size: 13px;
+  }
+
+  .talk__title {
+    font-size: 40px;
+    line-height: 50px;
+    width: 30%;
+    margin-right: 0px;
+  }
+
+  #around {
+    padding: 0px 15px;
+  }
+
+  #lana {
+    width: 200px;
+  }
+
+  #bp {
+    padding: 15px 10px;
+  }
+
+  .tab__txt {
+    max-width: 400px;
+  }
+
+  #rright {
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+
+  #tzuyu {
+    text-align: left;
+  }
+
+  .kim {
+    left: 0;
+    bottom: 0;
+  }
+
+  #llip {
+    right: 0;
+  }
+
+  .partners__title {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .num {
+    max-width: 100% !important;
+  }
+
+  .likey {
+    width: 100px;
+  }
+
+  #loona {
+    padding: 0px 3px;
+  }
+
+  .nav-link {
+    padding: 0px 5px !important;
+  }
+
+  .cry {
+    width: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .tab__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .tab__txt {
+    max-width: 300px;
+  }
+  .cry {
+    width: 170px;
+  }
+  .intro__title {
+    max-width: 80%;
+    font-size: 40px;
+  }
+  .intro__subtitle {
+    max-width: 80%;
+  }
+  .stat__bignub {
+    font-size: 60px;
+    line-height: 70px;
+  }
+  .ellipse {
+    width: 120px;
+    height: 120px;
+  }
+  .ellipse2 {
+    width: 120px;
+    height: 120px;
+  }
+  #jimbo {
+    text-align: center !important;
+    padding-top: 30px;
+  }
+  #ai {
+    padding-bottom: 30px;
+  }
+  .tt {
+    width: unset;
+    margin-bottom: 20px;
+  }
+  .slide__title {
+    margin-bottom: 12px;
+  }
+  .talk__title {
+    margin-bottom: 12px;
+  }
+  .pad__img {
+    text-align: center;
+  }
+  #latata {
+    padding: 20px 0px;
+  }
+  .partners__title {
+    margin-bottom: 12px;
+  }
+  .pack {
+    padding: 0px 15px;
+  }
+  .partners {
+    padding-top: 30px;
+  }
+  #cherry {
+    width: 50%;
+    margin-bottom: 10px;
+  }
+  #piri {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  #forewer {
+    margin-bottom: 12px;
+  }
+
+  #pikaboo {
+    margin-bottom: 20px;
+  }
+  .socs {
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+  #loona {
+    align-items: center;
+    margin-bottom: 32px;
+  }
+  .foot__txt {
+    margin-bottom: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab__txt {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 425px) {
+  #ai {
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+
+  .intro__title {
+    font-size: 35px;
+    line-height: 30px;
+  }
+
+  .intro__subtitle {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .intro__more {
+    font-size: 13px;
+    line-height: 16px;
+    margin-bottom: 30px;
+  }
+
+  .stat__bignum {
+    font-size: 70px;
+    line-height: 50px;
+  }
+
+  .stat__txt {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .ellipse {
+    top: 0;
+    width: 100px;
+    height: 100px;
+  }
+
+  .ellipse2 {
+    top: 0;
+    width: 100px;
+    height: 100px;
+  }
+
+  .jimbe {
+    width: 200px;
+  }
+
+  #jimbo {
+    padding-top: 50px;
+    text-align: center !important;
+  }
+
+  .tt {
+    margin-bottom: 20px;
+  }
+
+  .about__title {
+    font-size: 35px;
+  }
+
+  .about__txt {
+    line-height: 18px;
+  }
+
+  #really {
+    text-align: center;
+  }
+
+  .tab__content {
+    text-align: center;
+    align-items: center;
+  }
+
+  .tab__txt {
+    line-height: 18px;
+  }
+
+  .cardo {
+    margin-bottom: 10px;
+  }
+
+  #latata {
+    padding: 30px 15px;
+  }
+
+  .socs {
+    margin-bottom: 12px;
+    justify-content: center;
+  }
+
+  #easter {
+    margin-bottom: 32px;
+  }
+
+  #loona {
+    align-items: center;
+    margin-bottom: 32px;
+  }
+
+  .foot__txt {
+    margin-bottom: 6px;
+  }
+
+  .tab__img {
+    text-align: center;
+  }
+
+  .cry {
+    width: 200px;
+  }
+
+  .intro__flex__content {
+    justify-content: center;
+  }
+
+  .pad__txt {
+    line-height: 18px;
+  }
+
+  #piri {
+    text-align: center;
+  }
+
+  #forewer {
+    margin-bottom: 12px;
+  }
+
+  #pikaboo {
+    margin-bottom: 20px;
+  }
+
+  .partners__title {
+    margin-bottom: 12px;
+  }
+
+  .talk__title {
+    margin-bottom: 12px;
+  }
+
+  .slide__title {
+    margin-bottom: 12px;
+  }
+
+  .nav-link {
+    margin-bottom: 12px !important;
+  }
+
+  .navbar__brand {
+    width: 80px !important;
+  }
+
+  .pack {
+    padding: 0px 15px;
+  }
+
+  .partners__content {
+    padding-top: 30px;
+  }
+
+  .cry {
+    position: unset;
+  }
+
+  .tt {
+    width: 150px;
+  }
+}
