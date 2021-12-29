@@ -1,10 +1,15 @@
 <template>
   <div>
-    <div v-if="loading">Loading ...</div>
-    <div v-else v-for="item in items" :key="item.id">
-      {{ item.name }}:
-      {{ item.price | numberFormat(item.id & 1 ? "de-DE" : "ru-RU") }}
-    </div>
+    <Button type="success" size="sm" icon="menu" @click="log()">
+      <template #default>
+        <div></div>
+        <p class="border p-1 m-2">2</p>
+      </template>
+      <template #append>
+        <div>Bu tugmani bos!</div>
+      </template>
+    </Button>
+    <Buttons />
     <!-- intro -->
     <IndexIntro />
     <!-- about -->
@@ -20,6 +25,8 @@
   </div>
 </template>
 <script>
+import Buttons from "../components/Buttons.vue";
+import Button from "../components/UI/Button.vue";
 const serverData = [
   { id: 1, name: "Iphone", price: 20082736 },
   { id: 2, name: "Iphone 2", price: 30082736 },
@@ -39,9 +46,14 @@ export default {
   mounted() {
     setTimeout(() => {
       this.items = serverData;
-
       this.loading = false;
     }, 2000);
+  },
+  components: { Buttons, Button },
+  methods: {
+    log() {
+      console.log("Button clicked");
+    },
   },
 };
 </script>
