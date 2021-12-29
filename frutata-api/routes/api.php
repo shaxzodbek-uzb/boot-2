@@ -15,5 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::resource('products', ProductController::class);
+Route::resource('product-categories', ProductCategoryController::class);
 Route::resource('partners', PartnerController::class);
