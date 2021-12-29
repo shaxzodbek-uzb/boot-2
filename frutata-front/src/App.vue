@@ -1,34 +1,33 @@
 <template>
   <div id="app">
-    <NavigationVue />
+    <Navbar />
     <router-view />
+    <Footer />
+    <input v-model="value" />
+    <!-- <img src="@/assets/img/1.png" alt="" /> -->
   </div>
 </template>
 <script>
-import NavigationVue from "./components/Navigation.vue";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 export default {
-  components: { NavigationVue },
+  data() {
+    return {
+      value: "",
+    };
+  },
+  components: { Footer, Navbar },
+  // beforeCreate() {
+  //   console.log("before create");
+  // },
+  // created() {
+  //   console.log("created");
+  // },
+  // beforeUpdate() {
+  //   console.log("before update");
+  // },
+  // updated() {
+  //   console.log("updated");
+  // },
 };
 </script>
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
