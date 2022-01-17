@@ -1,13 +1,13 @@
 <template>
   <li class="nav-item" @click="$emit('active')">
-    <a
+    <router-link
       class="nav-link"
       :class="{ 'btn btn-info': item.isActive }"
       aria-current="page"
-      href="#"
+      to="/support"
     >
       {{ item.title }}
-    </a>
+    </router-link>
   </li>
 </template>
 

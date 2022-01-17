@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
@@ -22,15 +23,32 @@ class AuthController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function login()
+    public function login(Request $request)
     {
-        $credentials = request(['email', 'password']);
+        $http = new \GuzzleHttp\Client;
 
-        if (!$token = auth()->attempt($credentials)) {
-            return response()->json(['error' => 'Unauthorized'], 401);
+        try {
+            $response = $http->post(config('services.passport.login_endpoint'), [
+                'form_params' => [
+                    'grant_type' => 'password',
+                    'client_id' => config('services.passport.client_id'),
+                    'client_secret' => config('services.passport.client_secret'),
+                    'username' => $request->username,
+                    'password' => $request->password,
+                ],
+                'verify' => false
+            ]);
+            $json = json_decode($response->getBody(), true);
+            return response()->json($json);
+        } catch (\GuzzleHttp\Exception\BadResponseException $e) {
+            if ($e->getCode() === 400) {
+                return response()->json('Invalid Request. Please enter a username or a password.', 402);
+            } else if ($e->getCode() === 401) {
+                return response()->json('Your credentials are incorrect. Please try again', $e->getCode());
+            }
+
+            return response()->json('Something went wrong on the server.', $e->getCode());
         }
-
-        return $this->respondWithToken($token);
     }
 
     /**
@@ -40,7 +58,7 @@ class AuthController extends Controller
      */
     public function me()
     {
-        return response()->json(auth()->user());
+        return response()->json(['user' => auth()->user()]);
     }
 
     /**
@@ -50,6 +68,9 @@ class AuthController extends Controller
      */
     public function logout()
     {
+        auth()->user()->tokens->each(function ($token, $key) {
+            $token->delete();
+        });
         auth()->logout();
 
         return response()->json(['message' => 'Successfully logged out']);
