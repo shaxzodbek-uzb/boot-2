@@ -1,7 +1,7 @@
 <template>
   <!-- This example requires Tailwind CSS v2.0+ -->
   <nav class="bg-gray-800">
-    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+    <div class="w-full mx-auto px-12 sm:px-6 lg:px-48">
       <div class="relative flex items-center justify-between h-16">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <!-- Mobile menu button-->
@@ -51,13 +51,36 @@
           <div class="hidden sm:block sm:ml-6">
             <div class="flex space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a>
+              <nuxt-link
+                to="/products"
+                class="px-3 py-2 rounded-md text-sm font-medium"
+                aria-current="page"
+                :class="{ 'bg-gray-900 text-white':(active == 'products'),
+                          'text-gray-300 hover:bg-gray-700 hover:text-white':!(active == 'products')
+                }"
+              >
+                Mahsulot
+              </nuxt-link>
 
-              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</a>
+              <nuxt-link
+                to="/product-categories"
+                class="px-3 py-2 rounded-md text-sm font-medium"
+                :class="{ 'bg-gray-900 text-white':(active == 'product-categories'),
+                          'text-gray-300 hover:bg-gray-700 hover:text-white':!(active == 'product-categories')
+                }"
+              >
+                Kategoriya
+              </nuxt-link>
 
-              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-
-              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
+              <nuxt-link
+                to="/partners"
+                class="px-3 py-2 rounded-md text-sm font-medium"
+                :class="{ 'bg-gray-900 text-white':(active == 'partners'),
+                          'text-gray-300 hover:bg-gray-700 hover:text-white':!(active == 'partners')
+                }"
+              >
+                Hamkorlar
+              </nuxt-link>
             </div>
           </div>
         </div>
@@ -96,7 +119,7 @@
               From: "transform opacity-100 scale-100"
               To: "transform opacity-0 scale-95"
           -->
-            <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+            <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
               <!-- Active: "bg-gray-100", Not Active: "" -->
               <a id="user-menu-item-0" href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Your Profile</a>
               <a id="user-menu-item-1" href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Settings</a>
@@ -132,6 +155,17 @@
 
 <script>
 export default {
+  data () {
+    return {
+    }
+  },
+  computed: {
+    active () {
+      const name = this.$route.path
+      const nameList = name.split('/')
+      return nameList[1] ?? ''
+    }
+  },
   methods: {
     logout () {
       this.$auth.logout()

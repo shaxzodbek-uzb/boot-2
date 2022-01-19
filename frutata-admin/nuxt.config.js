@@ -83,6 +83,10 @@ export default {
         // autoLogout: false
       }
     }
+  },
+  loading: {
+    color: 'blue',
+    height: '5px'
   }
 
 }

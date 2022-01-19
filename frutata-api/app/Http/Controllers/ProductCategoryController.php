@@ -12,31 +12,31 @@ class ProductCategoryController extends Controller
     {
         $productCategories = ProductCategory::all();
         return response()->json([
-            'productCategories' => $productCategories
+            'items' => $productCategories
         ]);
     }
 
     public function store(Request $request)
     {
-        $params = $this->validate($request,[
+        $params = $this->validate($request, [
             'name' => 'required|string|max:200|min:5',
         ]);
 
         $productCategory = ProductCategory::create($params);
         return response()->json([
-            'productCategory' => $productCategory
+            'item' => $productCategory
         ]);
     }
 
     public function update(Request $request, ProductCategory $productCategory)
     {
-        $params = $this->validate($request,[
+        $params = $this->validate($request, [
             'name' => 'required|string|max:200|min:5',
         ]);
 
         $productCategory->update($params);
         return response()->json([
-            'productCategory' => $productCategory
+            'item' => $productCategory
         ]);
     }
 

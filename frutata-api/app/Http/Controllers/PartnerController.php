@@ -12,7 +12,7 @@ class PartnerController extends Controller
     {
         $partners = Partner::all();
         return response()->json([
-            'partners' => $partners
+            'items' => $partners
         ]);
     }
 
@@ -24,14 +24,14 @@ class PartnerController extends Controller
         ]);
 
         $file_name = Str::slug($params['name'] . now());
-//        $path = $request->file('image')->storeAs('images.product', $file_name . '.jpg', 'public');
+        //        $path = $request->file('image')->storeAs('images.product', $file_name . '.jpg', 'public');
         $path = $request->file('image')->storeAs('images', $file_name . '.jpg', 'public');
         $params['image'] = $path;
 
         $partner = Partner::create($params);
 
         return response()->json([
-            'partner' => $partner
+            'item' => $partner
         ]);
     }
 
@@ -51,7 +51,7 @@ class PartnerController extends Controller
         $partner->update($params);
 
         return response()->json([
-            'partner' => $partner
+            'item' => $partner
         ]);
     }
 

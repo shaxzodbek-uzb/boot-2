@@ -18,7 +18,7 @@ class ProductController extends Controller
     {
         $products = Product::all();
         return response()->json([
-            'products' => $products
+            'items' => $products
         ]);
     }
     public function store(Request $request)
@@ -33,7 +33,7 @@ class ProductController extends Controller
         $params['image'] = $path;
         $product = Product::create($params);
         return response()->json([
-            'product' => $product
+            'item' => $product
         ]);
     }
     public function update(Request $request, Product $product)
@@ -50,7 +50,7 @@ class ProductController extends Controller
         }
         $product->update($params);
         return response()->json([
-            'product' => $product
+            'item' => $product
         ]);
     }
     public function show(Product $product)

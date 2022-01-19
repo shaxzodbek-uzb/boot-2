@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,6 @@ Route::group([
     Route::post('auth/me', [AuthController::class, 'me']);
 
     Route::resource('products', ProductController::class);
-    // Route::resource('product-categories', ProductCategoryController::class);
+    Route::resource('product-categories', ProductCategoryController::class);
     Route::resource('partners', PartnerController::class);
 });
