@@ -1,5 +1,7 @@
 export default {
+  label: 'Partners',
   name: 'partners',
+  name_cebab: 'partners',
   headers: ['id', 'name'],
   api: {
     list: '/partners',
@@ -7,5 +9,8 @@ export default {
     create: '/partners',
     edit: '/partners',
     delete: '/partners'
+  },
+  routes: {
+    list: '/partners'
   }
 }

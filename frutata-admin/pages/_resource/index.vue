@@ -3,12 +3,13 @@
 </template>
 
 <script>
-import partners from '@/resources/partners'
+import resources from '@/resources'
+
 export default {
   name: 'IndexPage',
   data () {
     return {
-      resource: partners
+      resource: resources[this.$route.params.resource]
     }
   }
 
