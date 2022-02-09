@@ -43,11 +43,14 @@ class ProductController extends Controller
             'image' => 'sometimes|image|max:1000',
             'description' => 'required|string|max:500',
         ]);
+
+
         $file_name = Str::slug($params['name'] . now());
         if ($request->hasFile('image')) {
             $path = $request->file('image')->storeAs('images', $file_name . '.jpg', 'public');
             $params['image'] = $path;
         }
+
         $product->update($params);
         return response()->json([
             'item' => $product
@@ -55,8 +58,7 @@ class ProductController extends Controller
     }
     public function show(Product $product)
     {
-        // return Storage::disk('public')->download($product->image);
-        // return Storage::disk('public')->response($product->image);
+
         return response()->json([
             'item' => $product
         ]);
