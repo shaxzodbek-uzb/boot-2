@@ -1,10 +1,8 @@
 // get cameCase and cababCase from lodash
-import cababCase from 'lodash/cababCase'
-import camelCase from 'lodash/camelCase'
-
+import { camelCase, kebabCase } from 'lodash'
 export default function (resourceName, headers) {
   // resource name to cabab case
-  const resourceCabab = cababCase(resourceName)
+  const resourceCabab = kebabCase(resourceName)
 
   // resource name to camel case
   const resourceCamel = camelCase(resourceName)
