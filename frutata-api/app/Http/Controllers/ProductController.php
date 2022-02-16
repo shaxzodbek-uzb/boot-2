@@ -30,7 +30,7 @@ class ProductController extends Controller
         ]);
         $file_name = Str::slug($params['name'] . now());
         $path = $request->file('image')->storeAs('images', $file_name . '.jpg', 'public');
-        $params['image'] = $path;
+        $params['image'] = Storage::url($path);
         $product = Product::create($params);
         return response()->json([
             'item' => $product

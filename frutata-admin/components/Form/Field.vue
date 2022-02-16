@@ -1,19 +1,13 @@
 <template>
-  <div class="shadow overflow-hidden sm:rounded-md mb-4">
-    <div class="px-4 py-3 text-left text-lg font-semibold text-gray-700 sm:px-6">{{ field.label }}</div>
-    <div class="px-4 py-5 bg-white sm:p-6">
-      <div class="flex flex-wrap">
-        <component
-          :is="f.fieldType"
-          v-for="f in field.fields"
-          :key="f.fieldName"
-          v-model="itemClone"
-          :field="f"
-        />
-        {{ itemClone }}
-      </div>
-    </div>
-  </div>
+  <Panel :label="field.label">
+    <component
+      :is="f.fieldType"
+      v-for="f in field.fields"
+      :key="f.fieldName"
+      v-model="itemClone"
+      :field="f"
+    />
+  </Panel>
 </template>
 
 <script>
